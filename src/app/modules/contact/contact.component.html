@@ -1,0 +1,84 @@
+<h4>Template Driven Approch</h4>
+<form novalidate
+      #f="ngForm"
+      (ngSubmit)="submit(f)">
+  <div ngModelGroup="contact">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input id="firstName"
+             type="text"
+             class="form-control"
+             name="firstName"
+             ngModel
+             required
+             minlength="3"
+             maxlength="10"
+             pattern="nikhil"
+             #firstName="ngModel"
+             (change)="log(firstName)" />
+      <div class="alert alert-danger"
+           role="alert"
+           *ngIf="firstName.touched && !firstName.valid">
+        <div *ngIf="firstName.errors.required">First name is required.</div>
+        <div *ngIf="firstName.errors.minlength">
+          Fist name should be minimum {{firstName.errors.minlength.requiredLength}} characters, but you provide
+          {{firstName.errors.minlength.actualLength}}
+        </div>
+        <div *ngIf="firstName.errors.pattern">Also, First name doesn't match pattern. </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="comment">Comment</label>
+      <textarea id="comment"
+                cols="30"
+                rows="10"
+                class="form-control"
+                name="comment"
+                ngModel
+                #comment="ngModel"
+                required
+                minlength="1"
+                maxlength="20"></textarea>
+      <div class="alert alert-danger"
+           role="alert"
+           *ngIf="comment.touched && !comment.valid">
+        <div *ngIf="comment.touched && !comment.valid">Comment is required</div>
+        <div *ngIf="comment.errors.minlength">
+          comment should be minimun {{comment.errors.minlength.requiredLength}} characters.
+        </div>
+      </div>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"
+               ngModel
+               name="isSubscribed" />
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="contactMethod">Contact Method</label>
+      <select name="contactMethod"
+              id="contactMethod"
+              class="form-control"
+              ngModel>
+        <option *ngFor="let method of contactsMethods"
+                [value]="method.id">{{ method.name }}</option>
+      </select>
+    </div>
+    <div class="radio"
+         *ngFor="let method of fakeMethods">
+      <label>
+        <input type="radio"
+               ngModel
+               name="fakeMethods"
+               [value]="method.id" />
+        {{method.name}}
+      </label>
+    </div>
+    <p>
+      {{f.value | json}}
+    </p>
+    <button class="btn btn-primary"
+            [disabled]="!f.valid">Submit</button>
+  </div>
+</form>

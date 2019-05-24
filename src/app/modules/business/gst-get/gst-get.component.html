@@ -1,0 +1,79 @@
+<div class="row"
+     *ngIf="showOnlyData == false">
+  <div class="col-lg-6">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active"
+           [routerLink]="'create'"
+           href="javascript:void();">Add New Business</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-lg-6">
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <div class="btn-group"
+             role="group"
+             aria-label="Basic example">
+          <button type="button"
+                  class="btn btn-secondary"
+                  (click)="viewToggle('grid')">Gird</button>
+          <button type="button"
+                  class="btn btn-secondary"
+                  (click)="viewToggle('list')">List</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container-fluid pt-3">
+  <div class="col-lg-12"
+       *ngIf="gridList == false">
+    <table class="table table-hover table-sm">
+      <thead>
+        <tr>
+          <th>Person Name</th>
+          <th>Business Name</th>
+          <th>GST Number</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let business of businesses">
+          <td>{{ business.person_name }}</td>
+          <td>{{ business.business_name }}</td>
+          <td>{{ business.business_gst_number }}</td>
+          <td><a [routerLink]="['/business/edit', business._id]"
+               class="btn btn-primary btn-sm">Edit</a></td>
+          <td><a (click)="deleteBusiness(business)"
+               class="btn btn-danger btn-sm">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-lg-12"
+       *ngIf="gridList == true">
+    <div class="list-group">
+      <a href="business/create"
+         class="list-group-item list-group-item-action flex-column align-items-start"
+         *ngFor="let business of businesses">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ business.person_name }}</h5>
+          <small *ngIf="showOnlyData == false">
+            <div class="btn-group"
+                 role="group"
+                 aria-label="Basic example">
+              <a [routerLink]="['/business/edit', business._id]"
+                 class="btn btn-primary btn-sm">Edit</a>
+              <a (click)="deleteBusiness(business)"
+                 class="btn btn-danger btn-sm">Delete</a>
+            </div>
+          </small>
+        </div>
+        <p class="mb-1">{{ business.business_name }}</p>
+        <small>{{ business.business_gst_number }}</small>
+      </a>
+    </div>
+  </div>
+</div>

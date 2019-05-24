@@ -1,0 +1,133 @@
+<!--Navbar -->
+<nav class="mb-4 navbar navbar-expand-lg navbar-dark indigo">
+   <app-side-bar-toggle></app-side-bar-toggle>
+   &nbsp;
+   <a class="navbar-brand font-bold"
+      href="javascript:void(0);">Navbar</a>
+
+   <div class="collapse navbar-collapse"
+        id="navbarSupportedContent-4">
+      <ul class="navbar-nav ml-auto">
+         <li class="nav-item ">
+            <a class="nav-link"
+               href="javascript:void(0)"
+               routerLink="/home"><i class="fa fa-envelope"></i> Home <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item ">
+            <a class="nav-link"
+               href="javascript:void(0)"
+               routerLink="/about"><i class="fa fa-info"
+                  aria-hidden="true"></i> About <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item ">
+            <a class="nav-link"
+               href="javascript:void(0)"
+               routerLink="/news"><i class="fa fa-newspaper-o"
+                  aria-hidden="true"></i> News <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item ">
+            <a class="nav-link"
+               href="javascript:void(0)"
+               routerLink="/contact"><i class="fa fa-address-book"
+                  aria-hidden="true"></i> Contact <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               id="navbarDropdownMenuLink-4"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"><i class="fa fa-columns"></i> Courses </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-cyan"
+                 aria-labelledby="navbarDropdownMenuLink-4">
+               <a class="dropdown-item"
+                  href="javascript:void(0);"
+                  routerLink="/addCourse">Add Course</a>
+               <a class="dropdown-item"
+                  href="javascript:void(0);"
+                  routerLink="/course">Course</a>
+
+            </div>
+         </li>
+         <li class="nav-item ">
+            <a class="nav-link"
+               href="javascript:void(0)"
+               routerLink="/business"><i class="fa fa-cubes"
+                  aria-hidden="true"></i> Business <span class="sr-only">(current)</span></a>
+         </li>
+         <!-- <li class="nav-item">
+            <a class="nav-link"
+               href="javascript:void(0);"
+               routerLink="/student"><i class="fa fa-gear"></i>Student</a>
+         </li> -->
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               id="navbarDropdownMenuLink-4"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+               href="javascript:void(0);"
+               routerLink="/student"><i class="fa fa-columns"></i> Student </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-cyan"
+                 aria-labelledby="navbarDropdownMenuLink-4">
+               <a class="dropdown-item"
+                  href="javascript:void(0);"
+                  routerLink="/student/list">List</a>
+            </div>
+         </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               id="navbarDropdownMenuLink-4"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"><i class="fa fa-user"></i> Profile </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-cyan"
+                 aria-labelledby="navbarDropdownMenuLink-4">
+               <a class="dropdown-item"
+                  href="javascript:void(0);"
+                  routerLink="/change-password">Change Password</a>
+               <a class="dropdown-item"
+                  href="javascript:void(0);"
+                  (click)="onLogout()">Log out</a>
+            </div>
+         </li>
+      </ul>
+   </div>
+</nav>
+<!--/.Navbar -->
+
+<!-- <header>
+   <div class="container">
+      <span class="title">{{ appTitle }}</span>
+      <nav>
+         <ul class="navbar navbar-expand-lg navbar-light">
+            <li class="nav-item">
+               <a href="javascript:void(0);"
+                  routerLink="/home">Home</a>
+            </li>
+            <li class="nav-item">
+               <a href="javascript:void(0);"
+                  routerLink="/news">News</a>
+            </li>
+            <li class="nav-item">
+               <a href="javascript:void(0);"
+                  routerLink="/about">About</a>
+            </li>
+            <li class="nav-item"> <a href="javascript:void(0);"
+                  routerLink="/contact">Contact us</a>
+            </li>
+            <li class="nav-item">
+               <a href="javascript:void(0);"
+                  routerLink="/student/list">Students</a>
+            </li>
+            <li class="nav-item">
+               <a href="javascript:void(0);"
+                  routerLink="/business">Business</a>
+            </li>
+            <li class="nav-item">
+               <a href="javascript:void(0);"
+                  (click)="onLogout()">Logout</a>
+            </li>
+         </ul>
+      </nav>
+   </div>
+</header> -->

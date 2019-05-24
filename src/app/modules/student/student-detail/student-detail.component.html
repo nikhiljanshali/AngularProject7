@@ -1,0 +1,49 @@
+<a [routerLink]="'/student/list'">
+  Go to Student List
+</a>
+<div class="jumbotron">
+  <h4 class="display">
+    Hi, {{ student.full_name }}
+    <summary>
+      <small> [{{ student.university }}] </small>
+    </summary>
+  </h4>
+  <p class="lead">
+    {{ student.description }}
+  </p>
+  <hr class="my-4" />
+  <div class="container-fluid">
+    <table class="table table-sm">
+      <tbody>
+        <tr>
+          <th>Gender</th>
+          <td>{{ student.gender }}</td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td>{{ student.phone }}</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>
+            {{ student.street_number }}, {{ student.address }},
+            {{ student.country }}, {{ student.state }}, {{ student.city }},
+            {{ student.postal_code }}
+          </td>
+        </tr>
+        <tr>
+          <th>Date of Birth</th>
+          <td>{{ student.date }}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{ student.email }}</td>
+        </tr>
+        <tr>
+          <th>Skills</th>
+          <td>{{ student.skills }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

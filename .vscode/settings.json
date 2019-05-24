@@ -1,0 +1,18 @@
+{
+    "editor.fontSize": 15,
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "easy-icons",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.minimap.enabled": false,
+    "html.format.wrapAttributes": "force-aligned",
+    "html.format.enable": true,
+    "html.autoClosingTags": true,
+    "files.associations": {
+        "*.html": "html"
+    },
+    "cSpell.words": [
+        "STUDENTDETAILS"
+    ]
+}
